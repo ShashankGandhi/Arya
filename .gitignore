@@ -1,7 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-frontend/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run
@@ -15,6 +14,7 @@ frontend/node_modules
 backend/package-lock.json
 frontend/package-lock.json
 
+frontend/dist/*
 
 # IDEs and editors
 /.idea
