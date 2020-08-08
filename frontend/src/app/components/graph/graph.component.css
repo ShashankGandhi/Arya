@@ -1,0 +1,21 @@
+.example-events {
+  height: 200px;
+  border: 1px solid #555;
+  overflow: auto;
+}
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+h3 {
+  text-align: center;
+}
+
+body {
+  text-align: center;
+  /* vertical-align: middle; */
+}

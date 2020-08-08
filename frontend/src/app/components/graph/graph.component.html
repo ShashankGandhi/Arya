@@ -1,0 +1,72 @@
+<h3 class="align-centre">Graphs view</h3>
+<div class="flex justify-between">
+  <h3 class="align-centre"></h3>
+  <div>
+    <button (click)="logout()">Logout</button>
+  </div>
+</div>
+
+
+<br />
+<br />
+<ng-container>
+  <div class="row">
+    <div class="col md 8"></div>
+    <div class="col md 2">
+      <p>From Date</p>
+      <input
+        (change)="handleChange('fromDate', $event)"
+        type="date"
+        id="fromDate"
+        name="fromDate"
+      />
+    </div>
+    <div class="col md 2">
+      <p>To Date</p>
+      <input
+        (change)="handleChange('toDate', $event)"
+        type="date"
+        id="toDate"
+        name="toDate"
+      />
+    </div>
+    <div class="col md 2">
+      <button (click)="submit()">Submit</button>
+    </div>
+  </div>
+</ng-container>
+<br />
+<br />
+
+<ng-container>
+  <!-- <div class="row"> -->
+    <h3>Graph Type is: {{graphType}}</h3> 
+  <!-- </div> -->
+  <div class="row">
+    <!-- <div class="col md 4"></div> -->
+    <div class="col md 2">
+      <h3 style="color: green;">Total Accepted Count is: {{totalAccepted}}</h3> 
+    </div>
+    <div class="col md 2">
+      <h3 style="color: blue;">Total Number Count is: {{totalNumber}}</h3>
+    </div>
+  </div>
+</ng-container>
+
+
+<br>
+<br>
+<br>
+
+<!-- <div class="button-groups">
+  <button (click)="isLoading=!isLoading" nz-button nzType="default">Toggle Loading</button>
+</div> -->
+<ng-container>
+  <div
+    echarts
+    [options]="options"
+    [loading]="isLoading"
+    theme="macarons"
+    class="demo-chart"
+  ></div>
+</ng-container>

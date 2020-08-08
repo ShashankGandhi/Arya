@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "aryaApp"
+    }
+  },
+  "defaultProject": "aryaApp",
+  "cli": {
+    "analytics": false
+  }
 }

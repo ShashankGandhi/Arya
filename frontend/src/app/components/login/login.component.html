@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Login</title>
+  </head>
+  <body class="log-in-page">
+    <section class="h-100">
+      <div class="container h-100">
+        <div class="row justify-content-md-center h-100">
+          <div class="card-wrapper">
+            <div class="card fat">
+              <div class="card-body">
+                <h4 class="card-title">{{ pageName }}</h4> 
+                <form #loginform="ngForm">
+                  <div class="form-group">
+                    <label for="name">EmailId</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="emailId"
+                      required
+                      #emailIdForm="ngModel"
+                      [(ngModel)]="emailId"
+                      name="emailId"
+                      pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,4}$"
+                    />
+                    <div
+                      [hidden]="emailIdForm.valid && emailIdForm.touched"
+                      class="alert alert-danger"
+                    >
+                      EmailId is required
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-3">
+                      <label for="password">Password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        required
+                        #passwordForm="ngModel"
+                        [(ngModel)]="password"
+                        name="password"
+                      />
+                      <div
+                        *ngIf="!passwordForm.valid && passwordForm.touched"
+                        class="alert alert-danger"
+                      >
+                        Password is required
+                      </div>
+                    </div>
+                  </div>
+                  <nav>
+                    <button
+                      type="submit"
+                      class="btn btn-success"
+                      (click)="login()"
+                      [disabled]="!loginform.form.valid"
+                    >
+                      {{ pageName }}
+                    </button>
+                  </nav>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

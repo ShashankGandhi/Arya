@@ -1,0 +1,30 @@
+<h3>Image Upload view</h3>
+<div class="flex justify-between">
+  <h3></h3>
+  <div>
+    <button (click)="logout()">Logout</button>
+  </div>
+</div>
+
+<br />
+<br />
+<br />
+
+<ng-container class="align-center">
+  <div class="row">
+    <div class="col md 4">
+      <h4>Uploaded images are shown here</h4>
+      <img [hidden]="!showImage" [src]="transform()" height="200" />
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="col md 6">
+      <h4>Hello User, please upload image and click on submit to preview</h4>
+      <br />
+      <br />
+      <input (change)="handleInputChange($event)" type="file" />
+      <button (click)="submit()">Submit</button>
+    </div>
+  </div>
+</ng-container>
